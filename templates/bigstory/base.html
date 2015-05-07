@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>{% block title %}{%endblock%}The Big Stories - Longreads by the Omaha World-Herald</title>
+
+	{% block story-meta-tags %}{% endblock %}
+	
+	
+	<!-- Menu css -->
+	<link rel="stylesheet" type="text/css" href="http://dataomaha.com/media/bigstoryphotos/pushy-master/css/pushy.css">
+
+
+    <!-- jQuery 1.7.2+ -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://dataomaha.com/media/bestofphotos/unveil-master/jquery.unveil.js"></script>
+	
+
+    <!-- Flex slider -->
+    <link rel="stylesheet" href="http://dataomaha.com/media/fallarts/flexslider/flexslider.css" type="text/css">
+    <script src="http://dataomaha.com/media/fallarts/flexslider/jquery.flexslider.js"></script>
+   
+
+    <script>
+        $(document).ready(function() {
+        $('#headlinecontainer').css("opacity", "1");
+        $('#headlinecontainer2').css("opacity", "1");
+        $('#headlinecontainerBlack').css("opacity", "1");
+		
+		
+		});
+		</script>
+
+   <script type="text/javascript" charset="utf-8">
+        // Can also be used with $(document).ready()
+        $(window).load(function() {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                animationLoop: true,
+                multipleKeyboard: true
+            });
+        });
+    </script>
+	
+	
+	<!-- Typekit -->
+	<script src="//use.typekit.net/cwg5lmk.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+	<!-- Typekitend -->
+
+
+    <script>
+        $(document).ready(function() {
+
+
+
+            jQuery(document).scroll(function() {
+                if (jQuery(this).scrollTop() > $('#headercontainer').height()) {
+                    jQuery('#titlewrapper2').addClass('sticky');
+                } else {
+                    jQuery('#titlewrapper2').removeClass('sticky')
+                }
+            });
+
+            $("img").unveil(50, function() {
+                $(this).load(function() {
+                    this.style.opacity = 1;
+                });
+            });
+
+
+
+        });
+    </script>
+
+	<script type="text/javascript">
+		
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 2000);
+        return false;
+      }
+    }
+  });
+});
+		
+	</script>	
+	
+
+    <!-- google analytics for dataomaha -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-17420602-3']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+    <!-- /google analytics -->
+
+    <!-- BH Media Google Analytics  -->
+
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-43117949-3', 'omaha.com');
+        ga('send', 'pageview');
+    </script>
+
+    <!-- /BH Media Google Analytics -->
+
+
+
+    <style>
+        body {
+            color: black;
+            background: white;
+            font-family: Harriet, "canada-type-gibson", Franklin, Helvetica, Arial;
+			font-size:19px;
+            margin: 0;
+            padding: 0;
+
+        }
+        img {
+            opacity: 0;
+            -webkit-transition: opacity .9s ease-in;
+            -moz-transition: opacity .9s ease-in;
+            -o-transition: opacity .9s ease-in;
+            transition: opacity .9s ease-in;	
+				max-width:100%;
+			
+			
+        }
+        #headercontainer {
+            width: 100%;
+
+            text-align: center;
+        }
+        img#headerimage {
+            width: 100%;
+            z-index: 1;
+        }
+        img#headerimage2 {
+            width: 1000px;
+            margin-top: 40px;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            z-index: 1;
+        }
+        a {
+            text-decoration: none;
+            color: #336699;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+		
+		#headlinecontainer, #headlinecontainer2, #headlinecontainerBlack {opacity:0;
+		 -webkit-transition-delay: 2s; /* Safari */
+		transition-delay: 2s;  -moz-transition-delay: 2s; -o-transition-delay: 2s; 
+		            -webkit-transition: opacity .9s ease-in;
+            -moz-transition: opacity 2s ease-in;
+            -o-transition: opacity 2s ease-in;
+            transition: opacity 2s ease-in;			
+			
+		}
+		
+        div#headlinecontainer {
+            width: 800px;
+            position: absolute;
+            top: 33%;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+			z-index:9999999;
+
+        }
+        img#whlogo {
+            width: 180px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1#bigheadline {
+            letter-spacing: 1.2px;
+            font-family: "canada-type-gibson", Franklin, Helvetica, Arial, sans-serif;
+			font-style: normal;
+			font-weight: 600;
+            color: white;
+            font-size: 55px;
+            margin-top: 10px;
+            margin-bottom: 0px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+			
+        }
+        p#storysummary {
+            letter-spacing: .5px;
+            font-family: "canada-type-gibson", FranklinBook, Helvetica, Arial;
+            color: white;
+            opacity: .8;
+            margin-top: 15px;
+            font-size: 20px;
+            line-height: 26px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+	
+		div#headlinecontainerBlack {
+			width:80%;
+            max-width: 700px;
+            position: absolute;
+            top: 33%;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+			background:#fff;
+			padding:23px 8px 0px 20px;
+			text-align:left;
+        }
+
+        h1#bigheadlineBlack {
+            letter-spacing: 1.2px;
+            font-family: "canada-type-gibson", Franklin, Helvetica, Arial, sans-serif;
+			font-style: normal;
+			font-weight: 600;
+            color: #000;
+            font-size: 45px;
+            margin-top: 15px;
+            margin-bottom: 0px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        p#storysummaryBlack {
+            letter-spacing: .5px;
+            font-family: "canada-type-gibson", FranklinBook, Helvetica, Arial;
+            color: #000;
+            opacity: .8;
+            margin-top: 13px;
+            font-size: 19px;
+            line-height: 25px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+		
+		p#storysummary br, p#storysummaryBlack br, p#storysummary2 br {
+		line-height:30px;
+		}
+		
+        div#headlinecontainer2 {
+            width: 800px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        img#whlogo2 {
+            width: 180px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+        }
+        h1#bigheadline2 {
+            letter-spacing: 1.2px;
+            font-family: "canada-type-gibson", Franklin, Helvetica, Arial, sans-serif;
+			font-style: normal;
+			font-weight: 600;
+            color: black;
+            font-size: 55px;
+            margin-top: 10px;
+            margin-bottom: 0px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        p#storysummary2 {
+            letter-spacing: .5px;
+            font-family: "canada-type-gibson", FranklinBook, Helvetica, Arial;
+            color: black;
+            opacity: .9;
+            margin-top: 15px;
+            font-size: 20px;
+            line-height: 28px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .mainstuff {
+            max-width: 1000px;
+            padding: 0px 65px 20px 50px;
+            margin: 50px auto;
+        }
+        p#storyauthor {
+            font-family: "canada-type-gibson", Franklin, Helvetica, Arial;
+            font-size: 18px;
+            color: #333;
+            letter-spacing: 1px;
+            font-weight: normal;
+            margin-top: 2em;
+            margin-bottom: 15px;
+			margin-right: 10px;
+        }
+        p#datetime {
+            font-family: "canada-type-gibson", FranklinBook, Helvetica, Arial;
+            font-size: 14px;
+			letter-spacing:1px;
+            color: #666;
+        }
+        hr {
+            opacity: 0.2;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        /* textblock */
+        
+        div#articlecopy {
+            max-width: 61%;
+            margin-right: 38px;
+        }
+        h1#subhead {
+            font-family: "canada-type-gibson", FranklinDemi, Helvetica, Arial, sans-serif;
+			font-style: normal;
+			font-weight: 600;
+            max-width: 700px;
+            font-size: 24px;
+        }
+        p#storytext {
+            font-family: Harriet, Georgia;
+            font-size: 18px;
+            line-height: 28px;
+            color: #000;
+            letter-spacing: .3px;
+            opacity: .9;
+            max-width: 700px;
+			  margin-bottom: 20px;
+			  margin-top:0px;
+        }
+        p#storytext br, p#factboxtext br {
+			line-height:1px; content: " ";
+			display: block;
+			margin-top: 20px;
+ 
+        }
+		
+		        p#storytext b {font-size:19px;}
+ 
+        
+		
+		
+        /* bigphoto */
+        
+        img#bigphoto {
+		border-top:1px solid rgb(207, 207, 207); 
+		padding-top:30px;
+            width: 100%;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        p#cutline, p#topcaption {
+            font-family: "canada-type-gibson", FranklinBook, Helvetica, Arial;
+            font-size: 14px;
+            margin-top: 1px;
+            margin-bottom: 40px;
+			letter-spacing:.7px;
+            color: #666;
+			line-height:18px;
+        }
+		
+		p#cutline {
+		border-bottom: 1px solid rgb(207, 207, 207);
+			padding-bottom: 30px; margint-top:10px; 
+		}
+		
+		 p#topcaption{
+			text-align:left; 
+			max-width:1000px;  
+			margin-left: auto;
+			margin-right: auto;
+			left: 0;
+			right: 0;
+			z-index: 1
+			width:100%;
+			font-size:15.5px;
+			margin-bottom:14px;
+		 }
+		 
+		
+        /* factbox */
+        
+        p#factboxtext {
+            font-family: "canada-type-gibson", FranklinBook, Helvetica, Arial;
+            font-weight: normal;
+            font-size: 15px;
+            max-width: 98%;
+			color: #666;
+            line-height: 21px;
+						letter-spacing:.7px;
+            margin-left: 67px;
+        }
+		
+		
+		
+		
+        p#factboxtext b {
+            font-size: 16.5px; color:black; font-weight:400;
+        }
+
+        h1#factboxheader {
+            font-family: "canada-type-gibson", Franklin, Helvetica, Arial;
+            margin-top: 13px;
+			font-style:normal;
+			font-weight:600;
+            margin-bottom: 10px;
+            max-width: 98%;
+            font-size: 20px;
+			letter-spacing:1px;
+            margin-left: 67px;
+        }
+        /* rightphoto */
+        
+        div#therightstuff {
+            width: 32%;
+            float: right;
+            clear: both;
+            margin-bottom: 30px;
+            margin-left: 30px;
+        }
+        img#rightphoto {
+            max-width: 100%;
+            float: left;
+			margin-top:3px;
+        }
+        p#cutlineright {
+            font-family: "canada-type-gibson", FranklinBook, Helvetica, Arial;
+            font-size: 14px;
+            margin-top: 13px;
+            margin-bottom: 35px;
+            color: #666;
+            float: left;
+			letter-spacing:.7px;
+			line-height:18px;
+        }
+        /* bigquote */
+        
+        p#bigquote {
+            font-family: "canada-type-gibson", Franklin, Helvetica, Arial;
+            font-size: 22px;
+            width: 100%;
+			font-style:normal;
+			font-weight:600;
+            max-width: 600px;
+            text-align: center;
+            margin-left: 0px;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+			line-height:28px;
+			letter-spacing:.7px;
+        }
+		
+		 h2, h3 {
+            font-family: "canada-type-gibson", Franklin, Helvetica, Arial;
+            font-size: 22px;
+            width: 100%;
+			font-style:normal;
+			font-weight:600;
+            max-width: 600px;
+            margin-left: 0px;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+			line-height:28px;
+			letter-spacing:.7px;
+			
+        }
+		
+        hr#quote {
+            opacity: 0.1;
+            margin-top: 30px;
+            max-width: 100%;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: 0px;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+        }
+        /* extrahtml */
+        
+        #htmlblock {
+            margin-top: 23px;
+            max-width: 100%;
+        }
+        #htmlblock br {
+            line-height: 38px;
+        }
+        @font-face {
+            font-family: 'Franklin';
+            src: url('http://dataomaha.com/media/bigstoryphotos/franklinmedium.eot') format('eot'), url('http://dataomaha.com/media/bigstoryphotos/franklinmedium.ttf') format('truetype'), url('http://dataomaha.com/media/bigstoryphotos/franklin.woff') format('woff');
+        }
+        @font-face {
+            font-family: 'FranklinDemi';
+            src: url('http://dataomaha.com/media/bigstoryphotos/franklindemi.eot') format('eot'), url('http://dataomaha.com/media/bigstoryphotos/franklindemi.ttf') format('truetype'), url('http://dataomaha.com/media/bigstoryphotos/franklindemi.woff') format('woff');
+        }
+        @font-face {
+            font-family: 'FranklinBook';
+            src: url('http://dataomaha.com/media/bigstoryphotos/franklinbook.eot') format('eot'), url('http://dataomaha.com/media/bigstoryphotos/franklinbook.ttf') format('truetype'), url('http://dataomaha.com/media/bigstoryphotos/franklinbook.woff') format('woff');
+        }
+        @font-face {
+            font-family: 'Chaparral';
+            src: url('http://dataomaha.com/media/bigstoryphotos/chaparral.eot') format('eot'), url('http://dataomaha.com/media/bigstoryphotos/chaparral.ttf') format('truetype'), url('http://dataomaha.com/media/bigstoryphotos/chaparral.woff') format('woff');
+        }
+		
+		@font-face {
+            font-family: 'Harriet';
+            src: url('http://dataomaha.com/media/eventsphotos/harriet_text_regular.eot') format('eot'), url('http://dataomaha.com/media/eventsphotos/harriet_text_regular.ttf') format('truetype'), url('http://dataomaha.com/media/eventsphotos/harriet_text_regular.woff') format('woff');
+        }   
+		
+		
+		
+        #titlewrapper2 {
+            z-index: 20000;
+            background: #333332;
+            padding: 8px 0px 1px 50px;
+            margin: 0px -30px 30px -28px;
+            position: fixed;
+            width: 100%;
+            top: -80px;
+            -webkit-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+            opacity: .5;
+        }
+        #titlewrapper2.sticky {
+            top: 0px;
+            position: fixed;
+            opacity: 1;
+			height: 31px;
+        }
+        #titlewrapper2 h1 {
+            margin-bottom: 2px;
+            padding-left: 0px;
+            color: white;
+            font-size: 16.5px;
+			font-weight:400;
+            width: 5000px;
+            font-family: "canada-type-gibson", FranklinBook, Helvetica, Arial;
+        }
+
+		
+	.menu-btn {            margin-bottom: 1px; margin-top:2px;
+            padding-left: 0px;
+            color: white;
+            font-size: 16.5px;
+			font-weight:400;
+            width: 5000px;
+            font-family: "canada-type-gibson", FranklinBook, Helvetica, Arial; cursor: pointer;}	
+		
+		
+		.pushy a {  margin-bottom: 2px; margin-top:2px;
+            padding-left: 0px;
+            color: white;
+            font-size: 16.5px;
+			font-weight:400;
+            width: 141px;
+			margin-right:5px;
+            font-family: "canada-type-gibson", FranklinBook, Helvetica, Arial; cursor: pointer;
+		}
+			.pushy li {list-style-type: none;}	
+			
+			.pushy ul {padding-left:34px;}
+		
+		
+/************************************** media queries *****************************************************/
+		
+		
+		
+        
+        @media screen and (max-width: 1150px) {
+            .mainstuff {
+                width: 98%;
+                padding: 0px 15px 20px 45px;
+                margin: 65px auto;
+            }
+            img#bigphoto {
+                width: 92%;
+                margin-left: auto;
+                margin-right: auto: left: 0;
+                right: 0;
+                margin-top: 25px;
+            }
+            p#cutline {
+                max-width: 93%;
+            }
+			 p#topcaption {
+                max-width: 96%;
+            }
+            img#headerimage2 {
+                width: 97%;
+                margin-top: 30px;
+                margin-left: auto;
+                margin-right: auto;
+                left: 0;
+                right: 0;
+                z-index: 1;
+            }
+            div#therightstuff {
+                margin-right: 50px;
+                margin-left: 40px;
+            }
+            /* factbox */
+            
+            p#factboxtext {
+  
+                font-weight: normal;
+                font-size: 14px;
+                max-width: 98%;
+                line-height: 21px color: #666;
+                margin-left: 30px;
+            }
+            p#factboxtext b {
+                font-size: 16px;
+            }
+            p#factboxtext br {
+                line-height: 28px;
+            }
+            h1#factboxheader {
+
+                margin-top: 2px;
+                margin-bottom: 10px;
+                max-width: 98%;
+                font-size: 20px;
+                margin-left: 30px;
+            }
+        }
+		
+		    @media screen and (max-width: 1101px) {
+			body{overflow-x:hidden;}
+			}
+		
+        @media screen and (max-width: 850px) {
+            div#articlecopy {
+                max-width: 100%;
+            }
+            .mainstuff {
+                margin-top: 0px;
+                padding: 0px 10px 20px 10px;
+            }
+            div#headlinecontainer {
+                width: 90%;
+                position: absolute;
+                top: 33%;
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 10px;
+            }
+            img#whlogo {
+                width: 180px;
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            h1#bigheadline {
+                letter-spacing: 1.2px;
+
+                color: white;
+                font-size: 40px;
+                margin-top: 13px;
+                margin-bottom: 0px;
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            p#storysummary {
+                padding-left: 18px;
+                padding-right: 18px;
+                letter-spacing: .5px;
+    
+                color: white;
+                opacity: .8;
+                margin-top: 13px;
+                font-size: 17px;
+                line-height: 23px;
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+            }
+			
+			
+			 div#headlinecontainerBlack {
+                width: 80%;
+
+            }
+
+            h1#bigheadlineBlack {
+                letter-spacing: 1.2px;
+
+                color: black;
+                font-size: 35px;
+                margin-top: 13px;
+                margin-bottom: 0px;
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            p#storysummaryBlack {
+
+                padding-right: 18px;
+                letter-spacing: .5px;
+  
+                color: black;
+                opacity: .8;
+                margin-top: 13px;
+                font-size: 17px;
+                line-height: 23px;
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+            }
+			
+            div#headlinecontainer2 {
+                width: auto;
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 10px;
+            }
+            img#whlogo2 {
+                width: 180px;
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 30px;
+            }
+            h1#bigheadline2 {
+                letter-spacing: 1.2px;
+
+                color: black;
+                font-size: 40px;
+                margin-top: 10px;
+                margin-bottom: 0px;
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            p#storysummary2 {
+                letter-spacing: .5px;
+
+                color: black;
+                opacity: .9;
+                margin-top: 13px;
+                font-size: 17px;
+                line-height: 23px;
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+            }
+			
+			      div#therightstuff {
+                width: 41%;
+            }
+        }
+		
+
+		
+        @media screen and (max-width: 800px) {
+		body {margin:8px;}
+            h1#subhead {
+
+                max-width: 100%;
+                padding-right: 10px;
+            }
+            p#storytext {
+                letter-spacing: .3px;
+                opacity: .9;
+                max-width: 100%;
+                padding: right: 0px;
+            }
+            p#storytext br {
+                line-height: 36px;
+            }
+            /* rightphoto */
+            
+            div#therightstuff {
+                width: 45%;
+            }
+            img#rightphoto {
+                width: 100%;
+                max-width: 650px;
+            }
+            p#cutlineright {
+                width: 100%;
+                max-width: 650px;
+            }
+            h1#subhead {
+
+                max-width: 100%;
+                padding-right: 10px;
+                font-size: 22px;
+            }
+            div#headlinecontainer,
+			div#headlinecontainerBlack,
+            div#headlinecontainer2 {
+                top: 8%;
+                position: relative;
+				width:99%;
+				max-width:99%;
+				padding:0px 10px;
+
+            }
+            h1#bigheadline2,
+			h1#bigheadlineBlack,
+            h1#bigheadline {
+                font-size: 37px;
+                color: black;
+                text-align: left;
+				width:98%;
+				margin-left:0;
+            }
+            img#whlogo {
+                display: none;
+            }
+            img#whlogo2 {
+                display: none;
+            }
+            p#storysummary,
+            p#storysummaryBlack,
+            p#storysummary2 {
+                font-size: 17px;
+                line-height: 22px;
+                color: black;
+                margin-top: 19px;
+                text-align: left;
+                padding-left: 0px;
+				margin-left:0;
+				width:95%;
+            }
+            img#headerimage,
+            img#headerimage2 {
+                width: 96%;
+                margin-left: auto;
+                margin-right: auto;
+                left: 0;
+                right: 0;
+                margin-top: 10px;
+				padding:5px;
+            }
+            hr {
+                opacity: 0.3;
+                margin-top: 20px;
+                margin-bottom: 40px;
+                width: 90%;
+                margin-left: 0;
+            }
+        }
+        @media screen and (max-width: 600px) {
+		        div#articlecopy {
+
+            margin-right: 25px;
+        }
+		
+		.pushy a {font-size:15.5px; width:124px;}
+		
+		
+            /* textblock */
+            
+            div#articlecopy {
+                max-width: 100%;
+                clear: both;
+            }
+            div#therightstuff {
+                width: 95%;
+                float: none;
+                clear: both;
+                margin-left: 0px;
+                margin-top: 30px;
+            }
+            img#rightphoto {
+                width: 95%;
+                max-width: 500px;
+            }
+            p#cutlineright {
+                width: 95%;
+                max-width: 500px;
+            }
+            p#factboxtext {
+
+                font-weight: normal;
+                font-size: 15.5px;
+                max-width: 97%;
+                line-height: 21px color: #666;
+                margin-left: 1px;
+            }
+            p#factboxtext b {
+                font-size: 16px;
+            }
+            p#factboxtext br {
+                line-height: 28px;
+            }
+            h1#factboxheader {
+
+                margin-top: 2px;
+                margin-bottom: 10px;
+                max-width: 93%;
+                font-size: 20px;
+                margin-left: 1px;
+            }
+        }
+        @media screen and (max-width: 500px) {
+            img#rightphoto {
+                width: 95%;
+                max-width: 430px;
+            }
+            p#cutlineright {
+                width: 95%;
+                max-width: 430px;
+            }
+            p#storyauthor {
+                font-size: 15px;
+                letter-spacing: 1px;
+                line-height: 21px;
+                margin-top: 6px;
+                border-top: 1px solid #d3d3d3;
+                padding-top: 21px;
+                width: 90%;
+            }
+			            .mainstuff {
+                margin-top: 30px;}
+			
+			        #titlewrapper2.sticky {
+
+			height: 36px;
+        }
+			.menu-btn {   font-size:18px;}
+        }
+        @media screen and (max-width: 400px) {
+            img#rightphoto {
+                width: 95%;
+                max-width: 330px;
+            }
+            p#cutlineright {
+                width: 95%;
+                max-width: 330px;
+            }
+        }
+        @media screen and (max-width: 330px) {
+            img#rightphoto {
+                width: 95%;
+                max-width: 260px;
+            }
+            p#cutlineright {
+                width: 95%;
+                max-width: 260px;
+            }
+        }
+        /* NDN player */
+        
+        .ndn_embed {
+            float: left;
+            margin-bottom: 25px;
+            width: 95%;
+            height: 400px;
+        }
+        @media screen and (max-width: 400px) {
+            .ndn_embed {
+                height: 216px;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .ndn_embed {
+                height: 259px;
+            }
+        }
+        @media screen and (max-width: 767px) {
+            .ndn_embed {
+                height: 414px;
+            }
+			
+			
+        }
+    </style>
+
+
+
+</head>
+
+
+
+
+<body>
+<a name="top"></a>
+<!-- Pushy Menu -->
+<nav class="pushy pushy-left">
+    <ul>
+		<li><a href="#top" target="_blank">&#8613; Top of page</a></li>
+        <li><a href="http://omaha.com" target="_blank">Omaha.com</a></li>
+        <li><a href="http://dataomaha.com/bigstory" target="_blank">More Big Stories</a></li>
+		<li><a href="http://omaha.com/news" target="_blank">News</a></li>
+		<li><a href="http://omaha.com/sports" target="_blank">Sports</a></li>
+		<li><a href="http://omaha.com/money" target="_blank">Money</a></li>
+		<li><a href="http://omaha.com/go" target="_blank">Entertainment</a></li>
+		<li><a href="http://omaha.com/living" target="_blank">Living</a></li>
+		<li><a href="http://www.livewellnebraska.com/" target="_blank">Health</a></li>
+    </ul>
+</nav>
+
+<!-- Site Overlay -->
+<div class="site-overlay"></div>
+
+    <!-- main content -->
+    <div id="titlewrapper2">
+	<!-- Your Content -->
+<div id="container">
+    <!-- Menu Button -->
+    <div class="menu-btn">&#9776; Menu</div>
+</div>
+
+    </div>
+    {% block content %}{% endblock %}
+
+
+    <!-- footer -->
+    <div style="clear:both;"></div>
+    {% block footer %} {% endblock %}
+    <!-- end footer -->
+
+</body>
+
+
+
+
+
+<!-- Chartbeat -->
+<script type="text/javascript">
+    var _sf_startpt = (new Date()).getTime()
+</script>
+
+<script type="text/javascript">
+    var _sf_async_config = {};
+    /** CONFIGURATION START **/
+    _sf_async_config.uid = 52047;
+    _sf_async_config.domain = 'omaha.com';
+    _sf_async_config.useCanonical = true;
+    _sf_async_config.sections = 'dataomaha';
+    _sf_async_config.authors = 'Omaha.com';
+    /** CONFIGURATION END **/
+    (function() {
+        function loadChartbeat() {
+            window._sf_endpt = (new Date()).getTime();
+            var e = document.createElement('script');
+            e.setAttribute('language', 'javascript');
+            e.setAttribute('type', 'text/javascript');
+            e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+            document.body.appendChild(e);
+        }
+        var oldonload = window.onload;
+        window.onload = (typeof window.onload != 'function') ?
+            loadChartbeat : function() {
+                oldonload();
+                loadChartbeat();
+            };
+    })();
+</script>
+
+<!-- Chartbeat -->
+
+{% block omniture %}{% endblock %} 
+
+
+<!-- NDN javascript -->
+<script type="text/javascript" async src="http://launch.newsinc.com/js/embed.js" id="_nw2e-js"></script>
+
+<!-- Pushy javascript -->
+<script src="http://dataomaha.com/media/bigstoryphotos/pushy-master/js/pushy.min.js"></script>
+
+</html>

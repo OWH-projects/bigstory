@@ -1,0 +1,80 @@
+{% extends "bigstory/base.html" %}
+{% block content %}
+
+<div class="mainstuff">
+<img src="http://dataomaha.com/media/bigstoryphotos/logo-owh-black.png" style="width:200px;">
+<h1 id="archiveheader">The Big Stories</h1>
+<p id="archivesummary">Longreads by The World-Herald</p>
+<hr id="tophr">
+
+{% for story in archivelist %}
+
+<div id="teasercontainer">
+<p id="datedate">{{story.date | date:"l, N j, Y" }}</p>
+<a href="http://dataomaha.com/bigstory/{{story.sectionslug}}/{{story.labelslug}}" target="_blank"><img src="http://dataomaha.com/media/{{story.teaserimage}}"/></a>
+
+<h2><a href="http://dataomaha.com/bigstory/{{story.sectionslug}}/{{story.labelslug}}" target="_blank">{{story.label}}</a></h2>
+<p id="teasersummary">{{story.summary|safe}}</p>
+{% if story.author %}<p id="authorauthor"><em>By {{story.author}}</em></p>{% endif %}
+<p><a class="readstory" href="http://dataomaha.com/bigstory/{{story.sectionslug}}/{{story.labelslug}}" target="_blank">Read story</a></p>
+<hr id="divider">
+</div>
+
+{% endfor %}
+
+
+
+
+</div>
+
+<style>
+.mainstuff {width: 800px; padding:100px 30px 20px 30px; margin:-50px auto; border-right:1px solid #d3d3d3; min-height:5000px;}
+img {max-width:100%; opacity:1;}
+#archiveheader {font-family:"canada-type-gibson", FranklinDemi, Helvetica, Arial, sans-serif; font-weight: 600; font-style:normal; font-size:80px; line-height:80px; margin-top:10px; margin-bottom: 30px; letter-spacing:2px;}
+#archivesummary {font-family:"canada-type-gibson", FranklinBook, Helvetica, Arial, sans-serif;font-style:normal; font-size:20px;}
+hr#tophr {width:5000px; margin-top:40px;margin-bottom:30px;left:-500px; margin-left:-500px; right:-500px;}
+
+
+#teasercontainer {width:95%; float:left; margin-right:20px; margin-bottom:0px; padding:0px 20px 20px 0px;}
+<!-- #teasercontainer:nth-child(4n+3) {margin-right:10px;} -->
+#datedate {letter-spacing:.5px;}
+h2 {font-family:"canada-type-gibson", Franklin, Helvetica,Arial; margin-bottom:5px; font-weight: 600; font-style:normal; font-size:40px; line-height:46px; margin-top:20px;}
+h2 a{color:#000;}
+h2 a:hover {color:#252525; text-decoration:none; }
+#teasersummary {font-size:17px; line-height:24px;}
+p {font-family:"canada-type-gibson", FranklinBook, Helvetica, Arial, sans-serif; font-size:15px; letter-spacing:.2px;}
+p#authorauthor {font-family:"canada-type-gibson", Franklin; font-size:17px; margin-bottom:30px;color:#333; opacity:.8;}
+a.readstory {color:white;background:black; padding:10px; font-family:"canada-type-gibson", Helvetica, Arial, sans-serif;}
+a.readstory:hover {text-decoration:none; background:#666;}
+hr#divider {margin-top:50px;margin-bottom:10px;width:100%; }
+
+
+@media screen and (max-width: 830px) {
+.mainstuff {width: 94%;}
+h2 {font-size:35px;line-height:41px;}
+}
+
+@media screen and (max-width: 600px) {
+#archiveheader {font-size:70px; line-height:70px; margin-top:10px; margin-bottom: 20px;}
+.mainstuff {padding:100px 5px 20px 5px; margin:-50px auto; border-right:1px solid #d3d3d3; min-height:2000px;}
+#teasercontainer {padding:0px; width:95%; float:left; margin-right:2px; padding-bottom:20px;}
+h2 {font-size:30px;line-height:36px;}
+#teasersummary {font-size:15px; line-height:22px;}
+p {font-size:15px; letter-spacing:.2px;}
+p#authorauthor {font-size:16px; margin-bottom:30px;}
+a.readstory {color:white;background:black; padding:10px;}
+a.readstory:hover {text-decoration:none; background:#666;}
+hr#divider {margin-top:50px;margin-bottom:10px; }
+}
+
+</style>
+
+
+{% endblock %}
+
+
+{% block footer %}
+{% endblock %}
+
+
+
