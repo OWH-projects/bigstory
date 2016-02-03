@@ -1,4 +1,5 @@
 {% extends "bigstory/base.html" %}
+
 {% block content %}
 
 <div class="mainstuff">
@@ -11,7 +12,7 @@
 
 <div id="teasercontainer">
 <p id="datedate">{{story.date | date:"l, N j, Y" }}</p>
-<a href="http://dataomaha.com/bigstory/{{story.sectionslug}}/{{story.labelslug}}" target="_blank"><img src="http://dataomaha.com/media/{{story.teaserimage}}"/></a>
+<a href="http://dataomaha.com/bigstory/{{story.sectionslug}}/{{story.labelslug}}" target="_blank">{% if story.teaserimage %}<img src="http://dataomaha.com/media/{{story.teaserimage}}"/>{% else %}<img src="http://dataomaha.com/media/{{ story.headerimage }}" />{% endif %}</a>
 
 <h2><a href="http://dataomaha.com/bigstory/{{story.sectionslug}}/{{story.labelslug}}" target="_blank">{{story.label}}</a></h2>
 <p id="teasersummary">{{story.summary|safe}}</p>
