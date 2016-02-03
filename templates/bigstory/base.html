@@ -15,6 +15,7 @@
 	<!-- Menu css -->
 	<link rel="stylesheet" type="text/css" href="http://dataomaha.com/media/bigstoryphotos/pushy-master/css/pushy.css">
 
+	
 
     <!-- jQuery 1.7.2+ -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -31,7 +32,6 @@
         $('#headlinecontainer').css("opacity", "1");
         $('#headlinecontainer2').css("opacity", "1");
         $('#headlinecontainerBlack').css("opacity", "1");
-		
 		
 		});
 		</script>
@@ -53,11 +53,15 @@
 	<script>try{Typekit.load();}catch(e){}</script>
 	<!-- Typekitend -->
 
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+	
+	<link href='https://fonts.googleapis.com/css?family=Hind:400,300,500,600,700' rel='stylesheet' type='text/css'> 
 
+	<link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+	
+	
     <script>
         $(document).ready(function() {
-
-
 
             jQuery(document).scroll(function() {
                 if (jQuery(this).scrollTop() > $('#headercontainer').height()) {
@@ -67,35 +71,36 @@
                 }
             });
 
+
             $("img").unveil(50, function() {
                 $(this).load(function() {
                     this.style.opacity = 1;
                 });
             });
-
-
-
+			
         });
+		
+			jQuery(document).scroll(function() {
+               
+				if ($(window).width() > 800) {
+			   if (jQuery(this).scrollTop() > 100) {
+                    jQuery('#headlinecontainer').addClass('faster');
+                } else {
+                    jQuery('#headlinecontainer').removeClass('faster')
+                }
+				}
+            });
+			
+			
+			
+			
+			
+			
     </script>
+	
 
-	<script type="text/javascript">
-		
-$(function() {
-  $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top
-        }, 2000);
-        return false;
-      }
-    }
-  });
-});
-		
-	</script>	
+
+	
 	
 
     <!-- google analytics for dataomaha -->
@@ -151,18 +156,26 @@ $(function() {
         }
         img {
             opacity: 0;
-            -webkit-transition: opacity .9s ease-in;
-            -moz-transition: opacity .9s ease-in;
-            -o-transition: opacity .9s ease-in;
-            transition: opacity .9s ease-in;	
+            -webkit-transition: all .9s ease-in;
+            -moz-transition: all .9s ease-in;
+            -o-transition: all .9s ease-in;
+            transition: all .9s ease-in;	
 				max-width:100%;
 			
 			
         }
         #headercontainer {
             width: 100%;
-
             text-align: center;
+			top: 0;
+			z-index: 9999;
+
+			 -webkit-transition: all .5s ease-in;
+            -moz-transition: all .5s ease-in;
+            -o-transition: all .5s ease-in;
+            transition: all .5s ease-in;	
+  
+			
         }
         img#headerimage {
             width: 100%;
@@ -204,8 +217,18 @@ $(function() {
             margin-left: auto;
             margin-right: auto;
 			z-index:9999999;
-
+			
+			 -webkit-transition: all .3s ease-in;
+            -moz-transition: all .3s ease-in;
+            -o-transition: all .3s ease-in;
+            transition: all .3s ease-in;	
+			
         }
+		
+		 
+		
+		
+		
         img#whlogo {
             width: 180px;
             left: 0;
@@ -213,6 +236,9 @@ $(function() {
             margin-left: auto;
             margin-right: auto;
         }
+		
+		h1{ font-family:"canada-type-gibson", Franklin, Helvetica, Arial, sans-serif;}
+		
         h1#bigheadline {
             letter-spacing: 1.2px;
             font-family: "canada-type-gibson", Franklin, Helvetica, Arial, sans-serif;
@@ -334,6 +360,15 @@ $(function() {
             max-width: 1000px;
             padding: 0px 65px 20px 50px;
             margin: 50px auto;
+
+
+						 -webkit-transition: all .6s ease-in;
+            -moz-transition: all .6s ease-in;
+            -o-transition: all .6s ease-in;
+            transition: all .6s ease-in;	
+			z-index:1;
+	
+
         }
         p#storyauthor {
             font-family: "canada-type-gibson", Franklin, Helvetica, Arial;
@@ -361,6 +396,16 @@ $(function() {
         div#articlecopy {
             max-width: 61%;
             margin-right: 38px;
+			            font-family: Harriet, Georgia;
+            font-size: 18px;
+            line-height: 28px;
+            color: #000;
+            letter-spacing: .3px;
+            opacity: .9;
+            max-width: 700px;
+			  margin-bottom: 20px;
+			  margin-top:0px;
+			
         }
         h1#subhead {
             font-family: "canada-type-gibson", FranklinDemi, Helvetica, Arial, sans-serif;
@@ -376,18 +421,18 @@ $(function() {
             color: #000;
             letter-spacing: .3px;
             opacity: .9;
-            max-width: 700px;
+            max-width: 670px;
 			  margin-bottom: 20px;
 			  margin-top:0px;
         }
-        p#storytext br, p#factboxtext br {
+       div#articlecopy br, p#storytext br, p#factboxtext br {
 			line-height:1px; content: " ";
 			display: block;
 			margin-top: 20px;
  
         }
 		
-		        p#storytext b {font-size:19px;}
+		        div#articlecopy b, p#storytext b {font-size:19px;}
  
         
 		
@@ -400,6 +445,10 @@ $(function() {
             width: 100%;
             margin-top: 25px;
             margin-bottom: 10px;
+			            -webkit-transition: all .9s ease-in;
+            -moz-transition: all .9s ease-in;
+            -o-transition: all .9s ease-in;
+            transition: all .9s ease-in;	
         }
         p#cutline, p#topcaption {
             font-family: "canada-type-gibson", FranklinBook, Helvetica, Arial;
@@ -474,6 +523,10 @@ $(function() {
             max-width: 100%;
             float: left;
 			margin-top:3px;
+			            -webkit-transition: all .9s ease-in;
+            -moz-transition: all .9s ease-in;
+            -o-transition: all .9s ease-in;
+            transition: all .9s ease-in;	
         }
         p#cutlineright {
             font-family: "canada-type-gibson", FranklinBook, Helvetica, Arial;
@@ -711,7 +764,6 @@ $(function() {
             }
             h1#bigheadline {
                 letter-spacing: 1.2px;
-
                 color: white;
                 font-size: 40px;
                 margin-top: 13px;
@@ -789,7 +841,6 @@ $(function() {
             }
             h1#bigheadline2 {
                 letter-spacing: 1.2px;
-
                 color: black;
                 font-size: 40px;
                 margin-top: 10px;
@@ -873,6 +924,7 @@ $(function() {
                 text-align: left;
 				width:98%;
 				margin-left:0;
+				            font-family: "canada-type-gibson", Franklin, Helvetica, Arial, sans-serif;
             }
             img#whlogo {
                 display: none;
@@ -894,13 +946,13 @@ $(function() {
             }
             img#headerimage,
             img#headerimage2 {
-                width: 96%;
-                margin-left: auto;
-                margin-right: auto;
-                left: 0;
-                right: 0;
-                margin-top: 10px;
-				padding:5px;
+			width: 100%;
+		  margin-left: auto;
+		  margin-right: auto;
+		  left: 0;
+		  right: 0;
+		  /* margin-top: 10px; */
+		  /* padding: 5px; */
             }
             hr {
                 opacity: 0.3;
@@ -1037,6 +1089,9 @@ $(function() {
         }
     </style>
 
+	{% block noindex %}{% endblock %}
+
+
 
 
 </head>
@@ -1069,7 +1124,7 @@ $(function() {
 	<!-- Your Content -->
 <div id="container">
     <!-- Menu Button -->
-    <div class="menu-btn">&#9776; Menu</div>
+    <div class="menu-btn">&#9776;</div>
 </div>
 
     </div>
